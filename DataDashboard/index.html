@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>DashBoard: JavaScript</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link href="css/c3.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="bg-info">
+  <header class="header">
+    <div class="container my-4">
+      <span class="h1 font-weight-light text-white">DashBoard</span>
+    </div>
+  </header>
+  <div class="bg-white py-3">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="row">
+            <div class="col-lg-6">
+              <h2>Last 10 Seconds</h2>
+              <div id="chart"></div>
+            </div>
+            <div class="col-lg-6">
+              <div class="row">
+                <div class="col-12">
+                  <div class="row mb-3">
+                    <div class="col">
+                    </div>
+                  </div>
+                  <div class="row align-items-center justify-content-start">
+                    <div class="col h5 align-bottom text-lg-right">Timesamp</div>
+                    <div class="col-12 col-lg-8">
+                      <div class="h2 font-weight-light" id="time-stamp">00:00:00</div>
+                    </div>
+                  </div>
+                  <div class="row justify-content-start">
+                    <div class="col h5 text-lg-right">Pulsometer</div>
+                    <div class="col-12 col-lg-8">
+                      <div class="progress mb-3">
+                        <div id="progress-pulsometer" class="progress-bar bg-secondary" role="progressbar" aria-valuemin="0" aria-valuemax="255"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col h5 text-lg-right">Efficiency</div>
+                    <div class="col-12 col-lg-8">
+                      <div class="progress mb-3">
+                        <div id="progress-efficiency" class="progress-bar bg-info" role="progressbar" aria-valuemin="0" aria-valuemax="255"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row mt-3">
+                <div class="col-4">
+                  <div id="current-color" class="rounded"></div>
+                </div>
+                <div class="col-8">
+                  <h5>Color Status</h5>
+                  <div class="progress mb-3">
+                    <div id="progress-red" class="progress-bar bg-danger" role="progressbar" aria-valuemin="0" aria-valuemax="255"></div>
+                  </div>
+                  <div class="progress mb-3">
+                    <div id="progress-green" class="progress-bar bg-success" role="progressbar" aria-valuemin="0" aria-valuemax="255"></div>
+                  </div>
+                  <div class="progress mb-3">
+                    <div id="progress-blue" class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="255"></div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="input-group col-12 col-md-8 col-lg-5 mb-2 mb-xl-auto">
+          <div class="input-group-prepend">
+            <span class="input-group-text" required>from</span>
+          </div>
+          <input id="fromTime" class="form-control" type="time">
+        </div>
+
+        <div class="input-group col-12 col-md-8 col-lg-5 mb-2 mb-xl-auto">
+          <div class="input-group-prepend">
+            <span class="input-group-text" required>to</span>
+          </div>
+          <input id="toTime" class="form-control" type="time">
+        </div>
+
+        <div class="cta">
+              <a href="#" class="hide">Collect The Data!</a>
+              <section id="CollectingStatus" class="CollectingStatus">
+                <div class="centered">
+                  <h1 class="CollectingStatus">Collecting The Data...</h1>
+                </div>
+              </section>
+
+
+    </div>
+    <div class="cta1">
+      <b herf="#">Reset!</b>
+    </div>
+
+      </div>
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/d3.min.js"></script>
+  <script src="js/c3.min.js"></script>
+  <script src="js/moment.min.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/menu-toggle.js"></script>
+    <input type="hidden" id="passedArray" value="<?php echo json_encode($row); ?>"></input>
+</body>
+
+</html>
